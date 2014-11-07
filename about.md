@@ -36,6 +36,23 @@ CommercePlug is the native Integration Protocol for [Bippo Commerce](http://www.
 5. TODO: mobile-friendly web-based client implemented using Ionic
 6. TODO: Client SDK for other programming languages?
 
-### Contact Me
+## Resources
+
+1. [GoodRelations ontology](http://www.heppnetz.de/projects/goodrelations/)
+2. [Vocabularies](http://wiki.goodrelations-vocabulary.org/Vocabularies). Primary vocabularies are [Product Ontology](http://www.productontology.org/) and [OPDM](http://www.ebusiness-unibw.org/ontologies/opdm/)
+
+## Naming Conventions
+
+CommercePlug uses lowerCamel for fields and paths, similar to Google's API conventions.
+It makes mapping to [Linked Data](http://www.w3.org/standards/semanticweb/data) technologies ([schema.org](http://schema.org/), RDF, SPARQL) more natural, and also natural to JavaScript programmers.
+
+Some considerations:
+
+* Spree, FoxyCart, Shopify, Twitter uses lower_under for everything
+* Google uses lowerCamel including for URI paths (e.g. "/calendarList") -- which makes sense since they use Java
+* LinkedIn uses lower-dash for both URI paths and fields (note: XML only, not JSON)
+* Foursquare uses lowerCamel for fields and lowermerged for paths
+
+## Contact Me
 
 [hendy@soluvas.com](mailto:hendy@soluvas.com)
