@@ -14,7 +14,20 @@ CommercePlug is the native Integration Protocol for [Bippo Commerce](http://www.
 2. [SpreeCommerce API](http://guides.spreecommerce.com/api/)
 3. [Shopify API](http://docs.shopify.com/api)
 4. [Bippo Commerce API (CommercePlug)](http://soluvas.github.io/commerceplug)
-5. [Demandware Open Commerce API](http://www.programmableweb.com/api/demandware-open-commerce). I can't find any documentation. -Hendy
+5. [Google Content API for Shopping](https://developers.google.com/shopping-content/)
+6. [Demandware Open Commerce API](http://www.programmableweb.com/api/demandware-open-commerce). I can't find any documentation. -Hendy
+
+## Goals
+
+1. Practically adaptable to multiple protocol styles, both request-response and asynchronous messaging.
+2. Consistent ontology, representable in OWL, which in turn supports the goals below.
+3. Practically adaptable to multiple representation formats, initially [application/hal+json media type](http://stateless.co/hal_specification.html) but can be represented in Siren, XML, Atom, and RDF.
+4. Easy object binding using Jackson for Java, Groovy, Scala, Clojure; with [polymorphic deserialization](http://wiki.fasterxml.com/JacksonPolymorphicDeserialization).
+5. Easy HATEOAS support using Spring HATEOAS.
+6. Extensible, additional relations, classes, and properties are possible and encouraged; a la [XMPP Extensions](http://xmpp.org/xmpp-protocols/xmpp-extensions/).
+7. Provides batch operations to support bulk and Big Data scenarios.
+8. Provides streaming operations for real time (Fast Data) support.
+9. Selective import/export functionality that can be used both for backup-restore and also moving data across environments (development to production and vice versa) and different e-commerce providers.
 
 ## Target Protocols for Request-Response Style
 
@@ -23,7 +36,7 @@ CommercePlug is the native Integration Protocol for [Bippo Commerce](http://www.
 2. TODO: OData endpoint
 3. TODO: SPARQL endpoint. See [LB2CO Semantic Ontology Framework](http://www.ijorcs.org/uploads/archive/Vol4-Iss1-01-lb2co-a-semantic-ontology-framework.pdf).
 
-## Target Protocols for Messaging Style
+## Target Protocols for Asynchronous Messaging Style
 
 1. TODO: MQTT
 2. TODO: AMQP
@@ -39,10 +52,11 @@ CommercePlug is the native Integration Protocol for [Bippo Commerce](http://www.
 
 ## Resources
 
-1. [GoodRelations ontology](http://www.heppnetz.de/projects/goodrelations/)
-2. [Vocabularies](http://wiki.goodrelations-vocabulary.org/Vocabularies). Primary vocabularies are [Product Ontology](http://www.productontology.org/) and [OPDM](http://www.ebusiness-unibw.org/ontologies/opdm/)
-3. [Examples of Hypermedia API calls for E-commerce platforms](https://gist.github.com/hjr3/2289546)
-4. [The Hypermedia Debate by FoxyCart](http://www.foxycart.com/blog/the-hypermedia-debate)
+1. [schema.org ontology](http://schema.org/)
+2. [GoodRelations ontology](http://www.heppnetz.de/projects/goodrelations/)
+3. [Vocabularies](http://wiki.goodrelations-vocabulary.org/Vocabularies). Primary vocabularies are [Product Ontology](http://www.productontology.org/) and [OPDM](http://www.ebusiness-unibw.org/ontologies/opdm/)
+4. [Examples of Hypermedia API calls for E-commerce platforms](https://gist.github.com/hjr3/2289546)
+5. [The Hypermedia Debate by FoxyCart](http://www.foxycart.com/blog/the-hypermedia-debate)
 
 ## Naming Conventions
 
@@ -64,11 +78,27 @@ CommercePlug uses required header which is sent in all requests, but especially 
 
     CommercePlug-Version: 1.0
 
+The version follows [semantic versioning](http://semver.org/).
+
 Considerations:
 
 * "FoxyCart uses Required Header: Include FOXYCART-API-VERSION: 1
 * Spree & Shopify use no versioning (and shouldn't be required on HATEOAS-compliant endpoint?)
 * Google & LinkedIn uses /v1, Twitter uses /1.1, Facebook uses /v2.2"
+
+## `type` Field for Polymorphic Class Mapping
+
+The `type` field is reserved, and is used to aid object mapping/binding using [Jackson](http://wiki.fasterxml.com/JacksonHome), [jenabean](https://code.google.com/p/jenabean/), [JAXB](https://jaxb.java.net/), etc.
+
+The `type` may refer to a generic superclass e.g. `ProductOrService` or a subclass e.g. `SomeItems`.
+It's guaranteed there's a one-to-one mapping between the value of a `type` and an OO class.
+An OO class may represent one or more Linked Data classes. e.g. `ProductOrService` represents both [schema.org Product](http://schema.org/Product) and [GoodRelations ProductOrService](http://www.heppnetz.de/ontologies/goodrelations/v1.html#ProductOrService).
+
+Note that a property may be loosely typed, e.g. `Product.brand` can be either `Organization` or `Brand`. In the OO class this results in convenience `OrganizationOrBrand` interface which extends both `Organization` and `Brand`, and the actual runtime instance can be of class `OrganizationImpl` or `BrandImpl`, which implements `OrganizationOrBrand` as well. Unsupported methods throw `UnsupportedOperationException`. The alternative is just to use `Thing` interface which is fine for Groovy and Nashorn but requires casting in Java and Scala.
+
+## Java Domain Classes
+
+All `Impl` classes are `Serializable` and annotated with Jackson annotations.
 
 ## Contact Me
 
