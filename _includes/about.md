@@ -59,6 +59,8 @@ CommercePlug is the native Integration Protocol for [Bippo Commerce](http://www.
 3. [Vocabularies](http://wiki.goodrelations-vocabulary.org/Vocabularies). Primary vocabularies are [Product Ontology](http://www.productontology.org/) and [OPDM](http://www.ebusiness-unibw.org/ontologies/opdm/)
 4. [Examples of Hypermedia API calls for E-commerce platforms](https://gist.github.com/hjr3/2289546)
 5. [The Hypermedia Debate by FoxyCart](http://www.foxycart.com/blog/the-hypermedia-debate)
+6. [W3C Web Payments Activity](http://www.w3.org/Payments/)
+7. [Social Business Architecture Work](http://www.w3.org/community/socbizcg/architecture-work/) at [W3C Social Business Comunity Group](http://www.w3.org/community/socbizcg)
 
 ### Acknowledged Submissions to W3C related to Electronic Commerce
 
