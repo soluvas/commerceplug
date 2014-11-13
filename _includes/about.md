@@ -106,6 +106,12 @@ For cardinality, we opt for common cases. For example, `brand` is singular, and 
 
 TODO: maybe there needs to be a way to specify "client conformance level" in HTTP request header as negotiation?
 
+## Support for PropertyValue pairs
+
+At Bippo e-commerce provider, in the real world [additionalProperty/PropertyValue](https://www.w3.org/wiki/WebSchemas/PropertyValuePairs) will be very helpful. We're already working to integrate it in http://soluvas.github.io/commerceplug/ as integral part of schema:Product .
+
+While technically these should be part of imported ontology(es), store owners aren't ontology designers! And in order to ensure API interoperability among e-commerce providers and to support naive clients (i.e. non-JSON-LD conformant clients e.g. jQuery scripts) PropertyValue is a simple alternative that is practical to use.
+
 ## Java Domain Classes
 
 All `Impl` classes are `Serializable` and annotated with Jackson annotations.
