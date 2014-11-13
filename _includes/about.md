@@ -60,6 +60,30 @@ CommercePlug is the native Integration Protocol for [Bippo Commerce](http://www.
 4. [Examples of Hypermedia API calls for E-commerce platforms](https://gist.github.com/hjr3/2289546)
 5. [The Hypermedia Debate by FoxyCart](http://www.foxycart.com/blog/the-hypermedia-debate)
 
+### Acknowledged Submissions to W3C related to Electronic Commerce
+
+Source: http://www.w3.org/TR/EC-related-activities
+
+W3C Member organizations may submit submissions to propose technology or other ideas for consideration by W3C. W3C has acknowledged Submissions from Members that are related to the Electronic Commerce area. These submissions were brought to the attention of the participants in the Electronic Commerce Interest Group for consideration. Related Working Group are invited to pick up these Submissions for discussion as requirements and design input. 
+These documents are also made available to the public for consideration.
+
+1. [UCLP](http://www.w3.org/Submission/1999/02/) - The Universal Commerce Language and Protocol is an Extensible Markup Language (XML) application for metadata related to commercial products and companies and that can be used in identifying and retrieving product data residing across the Internet.
+2. [ICE](http://www.w3.org/Submission/1998/18/) - The Information and Content Exchange Protocol proposes a protocol and data format to implement the shared business rules in the domain of syndicated content, on top of the Web infrastructure of XML, HTTP, and URIs.
+3. [XFDL](http://www.w3.org/Submission/1998/16/) - The Extensible Forms Description Language describes an XML syntax to represent complex forms such as those found in business and government.
+4. [SDML](http://www.w3.org/Submission/1998/09/) - The Signed Document Markup Language describes how to structure a complete signed document, with the material being signed as part of the document. We expect that a web-based document signature scheme would have to address external documents, also referenced by URI. SMDL was an important initial contribution to the XML Signature Working Group.
+
+### Other resources related  to Electronic Commerce
+
+Following is a non exhaustive list of resources related  to Electronic Commerce:
+
+1. [Biztalk](http://www.biztalk.org/) - A community of standards users, with the goal of driving the rapid, consistent adoption of XML to enable electronic commerce and application integration.
+2. [CommerceNet](http://www.commerce.net/) - CommerceNet is a non-profit membership organization meeting the evolving needs of companies doing electronic commerce. Since its founding in 1994, CommerceNet's mission has been to promote and advance interoperable electronic commerce to support emerging communities of commerce.
+3. [ECML](http://www.ecml.org/) - The Electronic Commerce Modeling Language provides a simple set of guidelines for web merchants that will enable digital wallets from multiple vendors to automate the exchange of information between users and merchants.
+4. [FSTC](http://www.fstc.org/index.html) - The mission of the Financial Services Technology Consortium (FSTC) is to leverage the strength of US financial services organizations through joint research and development focused on technology opportunities, adding business value, managing risk, and reducing costs.
+5. [IOTP](http://www.iotp.org/) - The Open Trading Protocol was developed by a number of organisations, working co-operatively to make widespread Internet trading a convenient and secure reality.
+6. [OASIS](http://www.oasis-open.org/) - A community resource designed to provide a credible source of accurate, timely information about the application of XML in industrial and commercial settings.
+7. [XML/EDI](http://www.geocities.com/WallStreet/Floor/5815/index.html) - Provides a standard framework to exchange different types of data -- for example, an invoice, healthcare claim, project status -- so that the information be it in a transaction, exchanged via an Application Program Interface (API), web automation, database portal, catalog, a workflow document or message can be searched, decoded, manipulated, and displayed consistently and correctly by first implementing EDI dictionaries and extending our vocabulary via on-line repositories to include our business language, rules and objects.
+
 ## Naming Conventions
 
 CommercePlug uses lowerCamel for fields and paths, similar to Google's API conventions.
